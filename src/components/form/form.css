@@ -1,0 +1,168 @@
+/* Styles for every reusable form piece: InputField, PasswordField,
+   PasswordChecklist, SubmitButton, OtpInput. Bootstrap is only used for
+   the base ".btn" class and a couple of layout helpers elsewhere; else all is custom. */
+
+.field-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+
+.field-input {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field-input::placeholder {
+  color: #ABAFC0;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-soft);
+}
+
+.field-input-error {
+  border-color: var(--color-error);
+}
+
+.field-input-error:focus {
+  box-shadow: 0 0 0 3px var(--color-error-soft);
+}
+
+.field-error {
+  margin: 6px 0 0;
+  font-size: 0.8rem;
+  color: var(--color-error);
+}
+
+.password-input-wrap {
+  position: relative;
+}
+
+.password-input-wrap .field-input {
+  padding-right: 42px;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  border-radius: 6px;
+}
+
+.password-toggle-btn:hover {
+  color: var(--color-text);
+}
+
+.password-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.password-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+}
+
+.check-passed {
+  color: var(--color-success);
+}
+
+.check-pending {
+  color: var(--color-text-muted);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+}
+
+.submit-btn:disabled {
+  opacity: 0.75;
+}
+
+.spin-icon {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.otp-input-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.otp-box {
+  width: 46px;
+  height: 54px;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.otp-box:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-soft);
+}
+
+.otp-box-error {
+  border-color: var(--color-error);
+}
+
+@media (max-width: 400px) {
+  .otp-box {
+    width: 38px;
+    height: 46px;
+    font-size: 1.05rem;
+  }
+  .otp-input-row {
+    gap: 6px;
+  }
+}

@@ -1,0 +1,151 @@
+/* The Layout + card design is shared by all auth pages. Bootstrap provides
+   the responsive grid that centers and sizes
+   the card at each breakpoint; everything is custom. */
+
+.auth-shell {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, #F4F5FA 0%, #ECEDF7 100%);
+  padding: 40px 0;
+}
+
+.auth-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 36px 32px;
+}
+
+.auth-brand {
+  margin-bottom: 22px;
+}
+
+.auth-brand-mark {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+}
+
+.auth-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--color-text);
+}
+
+.auth-subtitle {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin: 0 0 24px;
+}
+
+.auth-body {
+  margin-top: 4px;
+}
+
+.auth-footer {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.auth-footer a,
+.auth-footer button {
+  font-weight: 600;
+}
+
+.auth-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+.auth-alert-success {
+  background: var(--color-success-soft);
+  color: #146945;
+}
+
+.auth-alert-error {
+  background: var(--color-error-soft);
+  color: #A02F2F;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.link-btn:hover {
+  color: var(--color-primary-dark);
+}
+
+.link-btn:disabled {
+  color: #B7B9C8;
+  cursor: not-allowed;
+}
+
+.row-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.remember-check {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.remember-check input {
+  accent-color: var(--color-primary);
+  width: 15px;
+  height: 15px;
+}
+
+.success-panel {
+  text-align: center;
+  padding: 8px 0 4px;
+}
+
+.success-icon {
+  color: var(--color-success);
+  font-size: 2.4rem;
+  margin-bottom: 14px;
+}
+
+.success-panel h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.success-panel p {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  margin: 0 0 22px;
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 28px 20px;
+  }
+}
